@@ -1,0 +1,290 @@
+@import "libs"
+@import "base"
+
+
+.fp-viewing-firstPage
+	.firstPage
+		&::before
+			right: 0
+			left: auto
+
+	.secondPage
+		&::before
+			right: -100%
+			left: auto
+
+	.lastPage
+		&::before
+			right: -100%
+			left: auto
+
+.fp-viewing-secondPage
+	.firstPage
+		&::before
+			right: 100%
+			left: auto
+
+	.secondPage
+		&::before
+			right: 0
+			left: auto
+
+	.lastPage
+		&::before
+			right: -100%
+			left: auto
+
+.fp-viewing-lastPage
+	.firstPage
+		&::before
+			right: 100%
+			left: auto
+
+	.secondPage
+		&::before
+			right: 100%
+			left: auto
+
+	.lastPage
+		&::before
+			right: 0
+			left: auto
+
+
+.logo
+	position: fixed
+	top: 20px
+	left: 30px
+	font-size: 21px
+	z-index: 1000
+	display: flex
+	flex-direction: column
+	line-height: .8
+
+	span, b
+		color: #111
+
+	b
+		font-size: 27px
+		text-transform: uppercase
+
+.soc
+	position: fixed
+	left: 30px
+	bottom: 60px
+	z-index: 1000
+
+	a
+		display: block
+		height: 40px
+		width: 40px
+		margin-bottom: 40px
+
+		&:hover,
+		&:focus
+
+			svg
+				fill: #cd0000
+
+		&:last-child
+			margin-bottom: 0
+	
+	svg
+		transition: all .6s
+
+.nav
+	position: fixed
+	right: 0
+	top: 0
+	bottom: 0
+	background-color: #fff
+	width: 100px
+	height: 100vh
+	z-index: 1000
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	padding: 25px 0
+
+	&__list
+		position: relative
+		display: flex
+		flex-direction: row-reverse
+		justify-content: space-between
+		transform: rotate(-90deg)
+
+		li
+			height: 100%
+
+		a
+			position: relative
+			display: block
+			height: 100%
+			font-size: 18px
+			font-weight: 500
+			color: #111
+			padding: 38px 35px
+			overflow: hidden
+			transition: all .6s
+			
+			&::before
+				content: ''
+				position: absolute
+				bottom: 0
+				height: 5px
+				width: 100%
+				background-color: #cd0000
+				transition: all .6s
+				
+			&:hover,
+			&:focus
+				color: #111
+
+	&__arrow
+		a
+			position: relative
+			display: block
+			height: 40px
+			width: 40px
+			border-radius: 50%
+			border: 1px solid #111
+			margin: 0 auto 30px
+			transition: all .6s
+
+			&::before
+				content: ''
+				position: absolute
+				left: 50%
+				top: 15px
+				transform: translate(-50%, 0) rotate(45deg)
+				width: 13px
+				height: 13px
+				border-top: 1px solid #111
+				border-left: 1px solid #111
+
+			&:hover,
+			&:focus
+				margin-bottom: 150px
+
+				span
+					height: 130px !important
+
+
+
+			&:first-child
+				span
+					position: relative
+					left: 50%
+					top: 15px
+					transform: translate(-50%, 0)
+					display: block
+					width: 1px
+					height: 30px
+					background-color: #111
+					transition: all .6s
+
+			// &:last-child
+
+			// 	span
+			// 		position: absolute
+			// 		left: 50%
+			// 		bottom: -5px
+			// 		transform: translate(-50%, 0)
+			// 		width: 1px
+			// 		height: 30px
+			// 		background-color: #111
+
+			// 		&::before
+			// 			content: ''
+			// 			position: absolute
+			// 			left: 0
+			// 			top: 1px
+			// 			transform: translate(-47%, 0) rotate(45deg)
+			// 			width: 13px
+			// 			height: 13px
+			// 			border-top: 1px solid #111
+			// 			border-left: 1px solid #111
+
+
+.hero
+
+	&__slider
+		height: 100%
+		width: 100%
+		background-image: url(../img/hero.png)
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center
+
+		img
+			position: absolute
+			left: 50%
+			top: 55%
+			transform: translate(-50%, -50%)
+			z-index: 1
+			max-height: 80%
+			max-width: 80%
+
+	&__block
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		display: flex
+		justify-content: center
+		align-items: center
+		height: 100vh
+		width: 100vw
+
+		h1, h2
+			font-size: 300px
+			text-transform: uppercase
+			color: #fff
+			z-index: 2
+			font-family: $title
+
+		h2
+			z-index: -1
+
+		&_text
+			position: absolute
+			left: 50%
+			top: 52%
+			transform: translate(-50%, -50%)
+			z-index: 3
+			text-align: center
+			color: #cd0000
+			font-size: 24px
+			line-height: 1
+			text-transform: uppercase
+			font-weight: 800
+			letter-spacing: 35px
+
+			p
+				margin-bottom: 90px
+
+				&:last-child
+					margin-bottom: 0
+
+	&__item
+		opacity: 0 !important
+		transition: all 1s !important
+		
+		&--two
+			img
+				right: 0
+				left: auto
+				transform: translate(0, -22%)
+
+		&--three
+			img
+				left: 55%
+				top: 50%
+				transform: translate(-50%, -50%)
+
+
+	.swiper-slide-active
+		opacity: 1 !important
+
+
+@import "media" // Always at the end
