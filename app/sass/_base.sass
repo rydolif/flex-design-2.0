@@ -7,11 +7,8 @@ $title: 'Playfair Display', sans-serif
 //---------------------end-fonts---------------------
 
 //----------------------color---------------------
-$accent: #b19266
-$text: #000
-$bg: #20212a
-$white: #fff
-
+$accent: #cd0000
+$text: #111
 //---------------------end-color---------------------
 
 body
@@ -19,7 +16,7 @@ body
 	position: relative
 	min-width: 320px
 	font-family: $fonts
-	font-size: 14px
+	font-size: 1.25vw
 	color: $text
 	line-height: 1.4
 	font-weight: 400
@@ -58,17 +55,21 @@ i
 	font-size: 16px
 	color: #fff
 
+input
+	height: 60px
+	line-height: 60px
+	letter-spacing: 2px
+
 input, textarea
-	border-radius: 5px
-	border: 1px solid #ffffff
+	border: none
+	border-bottom: 1px solid $text
 	outline: none
 	box-shadow: none
 	-webkit-appearance: none
 	background-color: transparent
-	padding: 0 20px
 	color: $accent
 	width: 100%
-	font-size: 20px
+	font-size: 18px
 	
 	&:focus:required:invalid
 		border-color: $accent
@@ -83,10 +84,12 @@ input, textarea
 		-webkit-appearance: none
 
 	&::placeholder
-		color: #a6a6a6
-		font-size: 20px
-		line-height: 40px
+		color: #dbdbdb
+		font-size: 18px
+		line-height: 60px
 		font-weight: 400
+		text-transform: uppercase
+		letter-spacing: 2px
 
 sub, sup
 	font-size: 60%
@@ -125,7 +128,7 @@ input[type=number]::-webkit-outer-spin-button
 	margin: 0
 
 
-// @import "_base/preloader"
+@import "_base/preloader"
 // @import "_base/animation"
 @import "_base/btn"
 // @import "_base/form"
