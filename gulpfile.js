@@ -47,8 +47,8 @@ gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',  			//----jquery
 		'app/libs/swiper/swiper.min.js', 			//----слайдер
-		'app/libs/fancybox/jquery.fancybox.js', 		//----картінка прикліку
 		'app/libs/src/fullpage.js', 		//----картінка прикліку
+		'app/libs/animation/wow.min.js', 		//----картінка прикліку
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))

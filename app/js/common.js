@@ -16,42 +16,30 @@ $(function() {
     
 
 //-------------------------------hero slider---------------------------------------
-	var swiper = new Swiper('.portfolio__slider', {
-        direction: 'vertical',
-        slidesPerView: 1,
-        effect: 'fade',
-        lazy: true,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        autoplay: {
-		   delay: 4500,
-		   disableOnInteraction: false,
-		},
-    });
-
-//-------------------------------hero slider---------------------------------------
 	var swiper = new Swiper('.hero__slider', {
 	  spaceBetween: 0,
 	  effect: 'fade',
 	  lazy: true,
+	  speed: 2000,
 	  autoplay: {
 	    delay: 4500,
 	    disableOnInteraction: false,
 	  },
 	});
 
+
 //-------------------------------fullpage---------------------------------------
 	$('#fullpage').fullpage({
 	    // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'], // фон цвет
-	    anchors: ['firstPage', 'secondPage', 'lastPage'], // якори
+	    anchors: ['firstPage', 'secondPage', 'threePage', 'fourPage', 'lastPage'], // якори
 	    menu: '#menu', // меню
 	    lazyLoad: true, // оптимизация
 	    navigation: true, // навигация
 	    // navigationTooltips: ['Мы', 'Портфолио', 'Контакты'], // названия меню
 	    showActiveTooltip: true, // меню
 	    slidesNavigation: true, // стрелки
+	    utoScrolling: false,
+		fitToSection: false
 	});
 
 	// стрелки
@@ -65,14 +53,24 @@ $(function() {
 	    $.fn.fullpage.moveSectionDown();
 	});
 
-//-------------------------------lang slider---------------------------------------
-	$('.nav a').each(function () {
-	  var location = window.location.href;
-	  var link = this.href; 
-	  if(location == link) {
-	      $(this).addClass('active');
-	  }
-	});
+
+//----------------------------wowJS-------------------------------
+  var wow = new WOW(
+    {
+      boxClass:     'wow',      // animated element css class (default is wow)
+      animateClass: 'animated', // animation css class (default is animated)
+      offset:       0,          // distance to the element when triggering the animation (default is 0)
+      mobile:       true,       // trigger animations on mobile devices (default is true)
+      live:         true,       // act on asynchronously loaded content (default is true)
+      callback:     function(box) {
+        // the callback is fired every time an animation is started
+        // the argument that is passed in is the DOM node being animated
+      },
+      scrollContainer: null // optional scroll container selector, otherwise use window
+    }
+  );
+  wow.init();
+
 
 });
 

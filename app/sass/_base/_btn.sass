@@ -1,8 +1,9 @@
 .btn
 	position: relative
-	display: inline-block
+	display: flex
+	align-items: center
+	justify-content: center
 	height: 60px
-	line-height: 60px
 	padding: 0 85px
 	border: none
 	outline: none
@@ -16,13 +17,12 @@
 	color: #fff
 	text-transform: uppercase
 	
-
 	&:hover,
 	&:focus
 		outline: none
 		text-decoration: none
 		cursor: pointer
-		box-shadow: 0 0 10px rgba($text, 1)
+		box-shadow: 5px 5px 15px 0 rgba($text, 1)
 		background-color: $text
 		color: #fff
 
