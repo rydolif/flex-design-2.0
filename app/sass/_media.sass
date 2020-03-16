@@ -117,7 +117,7 @@
 				justify-content: flex-start
 
 	.site
-		&--one
+		&--orphan
 
 			&__sub-title
 				margin-bottom: 7vh !important
@@ -181,7 +181,7 @@
 			font-size: 14px
 
 	.site
-		&--one
+		&--orphan
 			&__about_text
 				font-size: 14px
 		
@@ -204,20 +204,23 @@
 			width: 90%
 
 			img
-				width: 95%
+				width: 100%
 
 		&__text
 			right: 50%
+
+		&__arrow
+			display: none
 
 	.btn
 		height: 40px
 
 	.contacts
-		p
-			margin-bottom: 10px
+		p, a
+			margin: 0 auto 5px
 
-		a
-			margin-bottom: 10px
+		&__container
+			max-width: 80%
 
 		&__info,
 		&__wrap
@@ -246,19 +249,11 @@
 			height: 40px
 			line-height: 40px
 			font-size: 14px
-	
-	.contacts
-
-		p, a
-			margin: 0 auto 5px
-
-		&__container
-			max-width: 80%
 
 	.site
 		margin-right: 40px
 
-		&--one
+		&--orphan
 			&__sub-title
 				display: block
 				width: 100%
@@ -316,7 +311,22 @@
 
 				&_item
 					display: none
+		
+		&--burger
+			&__main
+				padding-bottom: 7vh !important
 
+			&__promotions
+				padding-bottom: 7vh
+
+				p
+					position: relative
+					transform: rotate(0)
+					left: 0
+					top: 0
+
+				img
+					width: 100%
 
 	.logo
 		top: 10px
@@ -375,8 +385,10 @@
 	.contacts__container
 		max-width: 88%
 
-	
-	.site--one
+	.portfolio__text h2
+		margin-bottom: 30px
+
+	.site--orphan
 		text-align: center
 		
 		&__sub-title

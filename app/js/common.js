@@ -1,19 +1,21 @@
 $(function() {
 
 //-------------------------------preloader---------------------------------------
-    setTimeout(function() {
-      $('#ctn-preloader').addClass('loaded');
-      // Una vez haya terminado el preloader aparezca el scroll
-      $('body').removeClass('no-scroll-y');
-
-      if ($('#ctn-preloader').hasClass('loaded')) {
-        // Es para que una vez que se haya ido el preloader se elimine toda la seccion preloader
-        $('#preloader').delay(1000).queue(function() {
-          $(this).remove();
-        });
-      }
-    }, 2000);
+	$('body').addClass('no-scroll');
+  
+  setTimeout(function() {
+    $('#ctn-preloader').addClass('loaded');
+    // Una vez haya terminado el preloader aparezca el scroll
     
+    if ($('#ctn-preloader').hasClass('loaded')) {
+      // Es para que una vez que se haya ido el preloader se elimine toda la seccion preloader
+      $('#preloader').delay(1000).queue(function() {
+        $(this).remove();
+        $('body').removeClass('no-scroll');
+      });
+    }
+  }, 2000);
+  
 
 //-------------------------------hero slider---------------------------------------
 	var swiper = new Swiper('.hero__slider', {

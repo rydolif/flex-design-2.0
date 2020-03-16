@@ -2,6 +2,9 @@
 @import "base"
 
 
+.no-scroll
+	overflow: hidden
+
 .fp-viewing-firstPage
 	.firstPage
 		&::before
@@ -415,7 +418,7 @@
 		&:hover,
 		&:focus
 			img
-				transform: translate(-50%, -50%) scale(1)
+				transform: translate(-50%, -50%) scale(1) !important
 
 		img
 			position: absolute
@@ -481,6 +484,41 @@
 
 			&:last-child
 				margin-bottom: 0
+
+	&__arrow
+		position: absolute
+		bottom: -40%
+		right: -55px
+		min-width: 40px
+		min-height: 40px
+		width: 2.85vw
+		height: 2.85vw
+		border: 1px solid $accent
+		border-radius: 50%
+		transition: all .6s
+
+		&::before,
+		&::after
+			content: ''
+			position: absolute
+
+		&::before
+			left: 50%
+			top: 50%
+			transform: translate(-30%, -50%) rotate(135deg)
+			transition: all .6s
+			width: 12px
+			height: 12px
+			border-top: 1px solid $accent
+			border-left: 1px solid $accent
+
+		&::after
+			height: 1px
+			width: 25px
+			left: 50%
+			top: 50%
+			transform: translate(-55%, -50%)
+			background-color: $accent
 
 
 .contacts
@@ -647,6 +685,10 @@
 	img
 		max-width: 100%
 
+	.animated
+		&::after
+			width: 0
+
 	&__container
 		max-width: 80%
 		width: 100%
@@ -665,7 +707,34 @@
 				left: 0
 				right: 0
 
-	&--one
+	&--more
+		position: relative
+		padding: 10vh 0
+
+		.portfolio
+			&__text
+				transform: translate(0, -50%)
+
+				h2, p
+					transform: translate(0, 0)
+					transition-delay: 0s
+
+			&__item
+
+				&:hover,
+				&:focus
+					img
+						transform: translate(0, 0) scale(1) !important
+
+				img
+					transform: translate(0, 0) scale(.96)
+					position: relative
+					top: 0
+					left: 0
+					display: block
+					margin: 0 auto
+				
+	&--orphan
 		display: flex
 		justify-content: space-between
 		align-items: center
@@ -693,10 +762,6 @@
 				height: 100%
 				background-color: #333
 				transition: all 1.2s
-
-		.animated
-			&::after
-				width: 0
 
 		&__hero
 			display: flex
@@ -911,6 +976,60 @@
 		a, p
 			&::after
 				transition-delay: 0s
+
+	&--burger
+		&__main
+			padding-bottom: 10vh !important
+
+			img
+				display: block
+				max-width: 104.5%
+				width: 104.5%
+				margin:
+					left: -4.5%
+
+		&__promotions
+			position: relative
+			padding-bottom: 10vh
+
+			p
+				position: absolute
+				left: -10%
+				top: 31%
+				transform: rotate(-90deg)
+
+			img
+				display: block
+				margin:
+					right: 0
+					left: auto
+				width: 80%
+
+		&__menu
+			position: relative
+			padding-bottom: 15vw
+
+			&_bunner
+				width: 100%
+
+			&_item
+				position: absolute
+				z-index: 1
+
+				&--one
+					left: -4vw
+					top: 4.75%
+					width: 13.2vw
+
+				&--two
+					right: -7vw
+					top: 3.3%
+					width: 23vw
+
+				&--three
+					bottom: 3%
+					left: 50vw
+					width: 11vw
 
 
 
