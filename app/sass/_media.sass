@@ -28,6 +28,31 @@
 
 	.soc
 		bottom: 30px
+	
+	.site
+		&--fructs
+			&__main_modal
+				width: 40%
+				right: 0
+
+			&__item img
+				display: block
+				margin: 0 auto 30px
+				width: 100%
+			
+			&__action
+
+				&_wrap
+					img
+						&:nth-child(1)
+							left: 70%
+
+			&__cart_item
+				left: 70%
+
+	.portfolio__text h2,
+	.portfolio__text p
+		margin-bottom: 30px
 
 
 @media only screen and (max-width : 1300px)
@@ -166,6 +191,10 @@
 			min-height: auto
 			padding: 10% 0
 
+		&--fructs
+			&__dashboard
+				padding-bottom: 10vh
+
 
 @media only screen and (max-width : 992px)
 	.portfolio__text p,
@@ -253,6 +282,10 @@
 	.site
 		margin-right: 40px
 
+		.animated
+			&::after
+				display: none
+
 		&--orphan
 			&__sub-title
 				display: block
@@ -327,6 +360,45 @@
 
 				img
 					width: 100%
+		
+		&--fructs
+			&__main_modal
+				display: none
+
+			&__item img
+				margin-bottom: 0
+
+			&__action
+				padding-bottom: 10vh
+
+				&_wrap
+					display: none
+
+
+			&__cart
+				padding-bottom: 10vh
+
+				img
+					width: 100%
+
+				&_item
+					display: none
+
+			&__dashboard
+
+				&_wrap
+					p
+						display: none
+
+				img
+					width: 100%
+					height: auto
+
+					&:nth-child(1)
+						display: none
+
+					&:nth-child(2)
+						margin-top: 0
 
 	.logo
 		top: 10px
@@ -342,6 +414,7 @@
 
 
 @media only screen and (max-width : 480px)
+
 	.contacts__info_before
 		display: none
 
@@ -396,7 +469,7 @@
 			text-align: center
 
 		&__hero
-			padding-bottom: 40px
+			padding-bottom: 30px
 
 			&_text
 				width: 100%
@@ -412,3 +485,7 @@
 
 			&_bunner
 				display: none
+
+		&__about_text
+			font-size: 12px
+		
